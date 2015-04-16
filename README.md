@@ -79,6 +79,10 @@ Draws your particles to the screen using the `vert` and `frag` shaders.
 As with `particles.step`, you may pass in an optional function for updating
 the shader's uniforms.
 
+### `particles.setLogicShader(logicShaderSource)`
+
+Change the logic shader to `logicShaderSource`.
+
 ## Contributing
 
 See [stackgl/contributing](https://github.com/stackgl/contributing) for details.
