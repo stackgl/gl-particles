@@ -30,6 +30,8 @@ function Particles(gl, options) {
   this.logic  = Shader(gl, logicVert, options.logic)
   this.render = Shader(gl, options.vert, options.frag)
 
+  this.logicVertSource = logicVert
+
   this.geom = Geom(gl)
   this.geom.attr('uv', generateLUT(this.shape), {
     size: 2
@@ -89,6 +91,10 @@ Particles.prototype.populate = function(map) {
 
   this.prev.color[0].setPixels(pixels)
   this.curr.color[0].setPixels(pixels)
+}
+
+Particles.prototype.setLogicShader = function(logicFrag) {
+  this.logic.update(logicVert, logicFrag)
 }
 
 function generateLUT(shape) {
